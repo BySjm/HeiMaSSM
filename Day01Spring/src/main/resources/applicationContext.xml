@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--    <bean id="userDao" class="cn.bysjm.dao.impl.UserDaoImpl"/>-->
+    <!--    <bean id="userService" class="cn.bysjm.service.impl.UserServiceImpl">-->
+    <!--        <property name="userDao" ref="userDao"/>-->
+    <!--    </bean>-->
+    <bean id="user" class="cn.bysjm.domain.User">
+        <property name="username" value="1"/>
+        <property name="password" value="123456"/>
+    </bean>
+
+    <bean id="userDao" class="cn.bysjm.dao.impl.UserDaoImpl">
+        <!--list-->
+<!--        <property name="list">-->
+<!--            <list>-->
+<!--                <value>张三</value>-->
+<!--                <ref bean="user"/>-->
+<!--                <value>李四</value>-->
+<!--            </list>-->
+<!--        </property>-->
+        <!--set-->
+<!--        <property name="set">-->
+<!--            <set>-->
+<!--                <value>张三</value>-->
+<!--                <value>李四</value>-->
+<!--                <value>王五</value>-->
+<!--                <value>赵六</value>-->
+<!--            </set>-->
+<!--        </property>-->
+        <!--array-->
+<!--        <property name="array">-->
+<!--            <array>-->
+<!--                <value>张三</value>-->
+<!--                <value>张三</value>-->
+<!--                <value>张三</value>-->
+<!--                <ref bean="user"/>-->
+<!--            </array>-->
+<!--        </property>-->
+        <!--map-->
+<!--        <property name="map">-->
+<!--            <map>-->
+<!--                <entry key="k1" value="k1的值"/>-->
+<!--                <entry key="k5" value-ref="user"/>-->
+<!--                <entry key="k6">-->
+<!--                    <bean class="cn.bysjm.domain.User"/>-->
+<!--                </entry>-->
+<!--            </map>-->
+<!--        </property>-->
+        <!--properties-->
+        <property name="properties">
+            <props>
+                <prop key="k1">jfbj1</prop>
+                <prop key="k2">jfbj2</prop>
+                <prop key="k3">jfbj3</prop>
+                <prop key="k4">jfbj4</prop>
+            </props>
+        </property>
+    </bean>
+
+</beans>
