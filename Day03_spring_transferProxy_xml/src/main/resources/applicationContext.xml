@@ -28,7 +28,7 @@
         <constructor-arg name="ds" ref="dataSource"/>
     </bean>
     
-    <aop:config>
+<aop:config>
     <aop:pointcut id="myPointcut" expression="execution( * cn.bysjm.service..*.*(..))"/>
     <aop:aspect ref="transactionManager">
         <aop:before method="beginTransaction" pointcut-ref="myPointcut"/>

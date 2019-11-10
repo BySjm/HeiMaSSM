@@ -10,6 +10,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -26,6 +28,21 @@ public class test {
         String sql = "insert into account values(null,?,?)";
         int i = jdbcTemplate.update(sql, "sjm", 3000);
         System.out.println(i);
+    }
+
+    //update批量处理
+    @Test
+    public void batchUpdate() throws Exception {
+        String sql = "insert into account values(null,?,?)";
+        List<Object[]> list = new ArrayList<>();
+        Object[] object1 = {"sjm",3000};
+        Object[] object2 = {"sjm",3000};
+        Object[] object3 = {"sjm",3000};
+        list.add(object1);
+        list.add(object2);
+        list.add(object3);
+        int[] ints = jdbcTemplate.batchUpdate(sql, list);
+        System.out.println(Arrays.toString(ints));
     }
 
     //查询单个
