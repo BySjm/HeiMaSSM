@@ -28,4 +28,15 @@
         <!--文件内容超过此大小，形成临时文件-->
         <property name="maxInMemorySize" value="102400"/>
     </bean>
+    <!--拦截器-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/target"/>
+            <bean class="cn.bysjm.interceptor.MyInterceptor1"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/target"/>
+            <bean class="cn.bysjm.interceptor.MyInterceptor2"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>

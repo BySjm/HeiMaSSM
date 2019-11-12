@@ -6,5 +6,9 @@
 <body>
 <h3>成功页面...</h3>
 ${app}
+
+<%
+    System.out.println("success方法执行了...");
+%>
 </body>
 </html>

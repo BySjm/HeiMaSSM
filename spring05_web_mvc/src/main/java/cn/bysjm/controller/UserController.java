@@ -18,6 +18,12 @@ import java.util.List;
 @SessionAttributes("app")
 public class UserController {
 
+    @RequestMapping("/quick")
+    public String quickMethod(){
+        int a = 1/0;
+        return "success";
+    }
+
     @RequestMapping("/returnString")
     public String quick(@SessionAttribute("app") String app){
         System.out.println(app);
